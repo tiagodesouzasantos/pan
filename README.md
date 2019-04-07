@@ -1,27 +1,32 @@
 # Githubpan
+Aplicação com autenticação com github.
+[Pré - requisitos]
+- Git ([Dowload](https://git-scm.com/downloads))
+- NodeJs([Download](https://nodejs.org/en/download/))
+- Após o NodeJs instalado é necessário instalar o angular cli([Download e instalação](https://cli.angular.io/))
+- Baixar o [repositório](https://github.com/tiagodesouzasantos/pan) utilizando o seguinte comando:
+```bash
+$ git clone https://github.com/tiagodesouzasantos/pan.git
+```
+Para rodar localmente é necessário ter acesso a internet.
+Após baixar o repositório acesse o diretório e rode o seguinte comando:
+```bash
+$ npm install
+```
+Após fazer isso ele baixará todas as dependencias do projeto.
+E já está pronto para rodar localmente.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+## Rodando o projeto
+Dentro do repositório rode o seguinte comando para rodar a aplicação:
+```bash
+$ ng serve
+```
+**Gerando build de produção** basta rodar o seguinte comando:
+```bash
+$ ng build --prod githubpan
+```
+## CORS
+Para contornar o problema de cors com a api do github desenvolvi uma [api](https://github.com/tiagodesouzasantos/pangitauth) em NodeJs que faz a autenticação com o github e devolve os dados de autenticação.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Produção
+A aplicação está publicada no git pages no seguinte [link](https://tiagodesouzasantos.github.io/pan/).
