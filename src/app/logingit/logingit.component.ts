@@ -28,10 +28,9 @@ export class LogingitComponent implements OnInit {
       if (params['code']){
         _this.loadingData = true;
         _this.gitAction.valideSession(params['code']).subscribe(validResult=>{
-          let token = _this.gitAction.getAccessToken(validResult);
-          if (token !='bad_verification_code'){
-            _this.gitAction.getUserData(token).subscribe(userResult => {
-              _this.session.set('token', token);
+          if (validResult.error !='bad_verification_code'){
+            _this.gitAction.getUserData(validResult.access_token).subscribe(userResult => {
+              _this.session.set('token', validResult.access_token);
               _this.session.set('userData', JSON.stringify(userResult));
               _this.loadingData = false;
               _this.options.optionsChangeStatus(true);
