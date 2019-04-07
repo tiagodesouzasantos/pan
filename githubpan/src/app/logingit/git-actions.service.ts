@@ -24,11 +24,10 @@ export class GitActionsService {
       headers: this.getHeader(access_token)
     });
   }
-  getUserRepo(){
-    // return this.httpClient.get(`https://api.github.com/user?access_token=${access_token}`, {
-    //   headers: this.getHeader(this.session.get('token'))
-    // });
-    // https://api.github.com/repositories
+  getUserRepo(user:string){
+    return this.httpClient.get(`https://api.github.com/users/${user}/repos`, {
+      headers: this.getHeader(this.session.get('token'))
+    });
   }
   getAccessToken(query:string){
     return query.split('&')[0].split('=')[1];
