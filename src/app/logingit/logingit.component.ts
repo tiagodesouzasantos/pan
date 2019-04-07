@@ -20,7 +20,17 @@ export class LogingitComponent implements OnInit {
     private options: OptionsService) { }
 
   loadingData:boolean = false;
-  
+  host: string = window.location.hostname;
+  clienteIdList:any = {
+    "localhost": {
+      client_id: '3a8e081b8960df638bca'
+    },
+    "tiagodesouzasantos.github.io": {
+      client_id: 'cc5d6a52910648e97389'
+    }
+  }
+
+
   ngOnInit() {
     let _this = this;
     _this.loadingData = false;

@@ -28,12 +28,10 @@ export class RepositoriesComponent implements OnInit {
       this.gitactions.getUserRepo(this.userData.login).subscribe(userRepos=>{
         _this.repos = userRepos;
         _this.loadingData = false;
-        console.log('_this.repos', _this.repos);
       });
     } catch (error) {
       if (!this.userData) this.router.navigate(['/'])
     }
-    console.log('this.userData',this.userData);
   }
 
 }

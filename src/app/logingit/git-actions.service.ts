@@ -13,7 +13,8 @@ export class GitActionsService {
 
   valideSession(code:string){
     return this.httpClient.post<AuthGit>('https://pangitauth.herokuapp.com/api/auth', {
-          code: code
+          code: code,
+          server: window.location.hostname
     }, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
